@@ -2,7 +2,7 @@
   <img src="./ffuck.svg" alt="huh">
 </p>
 <p align="center">
-  <img src="./cf8d18b15cd32bc4e98a6711e1dd862c.jpg" alt="huh">
+  <img src="./f4ba31dcfbf891a2d99fa1fa8f0d0104.gif" alt="huh">
 </p>
 
 <p align="center">
@@ -23,5 +23,6 @@
   <img src="./5b181161ccf767b0c7f808cca0030963.gif" alt="huh">
 </p>
 
+<p align="center">
+  <font color="idk">me n my sammy @melancholicme
 
-[![strawpage](./andts.svg)](https://t0rchbearer.straw.page/)
