@@ -16,7 +16,7 @@
   <img src="./fffuck.svg" alt="huh">
 </p>
 <p align="center">
-  <img src="./yazaebalsa.svg" alt="huh">
+  <img src="./faku.svg" alt="huh">
 </p>
 
 <p align="center">
