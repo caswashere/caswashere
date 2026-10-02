@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./ffuck.svg" alt="huh">
+  <img src="./iwannakms.png" alt="huh">
 </p>
 <p align="center">
   <img src="./f4ba31dcfbf891a2d99fa1fa8f0d0104.gif" alt="huh">
