@@ -1,0 +1,207 @@
+from PIL import Image, ImageDraw, ImageFont
+import os
+
+# =========================
+# НАСТРОЙКИ
+# =========================
+
+phrases = [
+    "мне нравится то, как ты пытаешься",
+    "изгонять меня еще раз",
+    "ну пожалуйста ;-)"
+]
+
+WIDTH = 700
+HEIGHT = 80
+
+BG = (13, 17, 23)       # GitHub dark
+FG = (240, 246, 252)    # текст
+CURSOR = (240, 246, 252)
+
+# Скорость печати
+TYPING_DELAY = 65       # мс между символами
+
+# Пауза после полностью напечатанной фразы
+END_PAUSE = 900         # мс
+
+# Пауза перед следующей фразой
+NEXT_PAUSE = 250        # мс
+
+# Скорость удаления
+DELETE_DELAY = 35       # мс
+
+# Мигающий курсор
+CURSOR_BLINK = 400      # мс
+
+
+# =========================
+# ШРИФТ
+# =========================
+
+font_paths = [
+    # Linux
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+
+    # macOS
+    "/System/Library/Fonts/Menlo.ttc",
+
+    # Windows
+    "C:/Windows/Fonts/consola.ttf",
+
+    # fallback
+    "DejaVuSansMono.ttf",
+]
+
+font_path = None
+
+for path in font_paths:
+    if os.path.exists(path):
+        font_path = path
+        break
+
+if font_path is None:
+    raise FileNotFoundError(
+        "Не найден моноширинный шрифт. "
+        "Установи DejaVu Sans Mono или укажи путь к шрифту вручную."
+    )
+
+font = ImageFont.truetype(font_path, 20)
+
+
+# =========================
+# РАЗМЕР ТЕКСТА
+# =========================
+
+def text_width(text):
+    dummy = Image.new("RGB", (1, 1))
+    draw = ImageDraw.Draw(dummy)
+    bbox = draw.textbbox((0, 0), text, font=font)
+    return bbox[2] - bbox[0]
+
+
+# =========================
+# СОЗДАНИЕ КАДРА
+# =========================
+
+def make_frame(text, cursor=True):
+    image = Image.new("RGB", (WIDTH, HEIGHT), BG)
+    draw = ImageDraw.Draw(image)
+
+    x = 20
+    y = 25
+
+    draw.text(
+        (x, y),
+        text,
+        font=font,
+        fill=FG
+    )
+
+    if cursor:
+        cursor_x = x + text_width(text) + 2
+
+        draw.rectangle(
+            [
+                cursor_x,
+                y + 2,
+                cursor_x + 2,
+                y + 25
+            ],
+            fill=CURSOR
+        )
+
+    return image
+
+
+# =========================
+# КАДРЫ
+# =========================
+
+frames = []
+durations = []
+
+time_since_cursor = 0
+cursor_visible = True
+
+
+def add_frame(text, duration):
+    global cursor_visible
+    frames.append(make_frame(text, cursor_visible))
+    durations.append(duration)
+
+
+# =========================
+# АНИМАЦИЯ
+# =========================
+
+for phrase_index, phrase in enumerate(phrases):
+
+    current = ""
+
+    # -------------------------
+    # ПЕЧАТЬ
+    # -------------------------
+
+    for char in phrase:
+        current += char
+
+        add_frame(
+            current,
+            TYPING_DELAY
+        )
+
+    # -------------------------
+    # ПАУЗА ПОСЛЕ ПЕЧАТИ
+    # -------------------------
+
+    # Несколько кадров с мигающим курсором
+    elapsed = 0
+    cursor = True
+
+    while elapsed < END_PAUSE:
+        add_frame(
+            current,
+            CURSOR_BLINK
+        )
+
+        elapsed += CURSOR_BLINK
+        cursor = not cursor
+
+    # -------------------------
+    # УДАЛЕНИЕ
+    # -------------------------
+
+    while current:
+        current = current[:-1]
+
+        add_frame(
+            current,
+            DELETE_DELAY
+        )
+
+    # -------------------------
+    # ПЕРЕД СЛЕДУЮЩЕЙ ФРАЗОЙ
+    # -------------------------
+
+    if phrase_index < len(phrases) - 1:
+        add_frame(
+            "",
+            NEXT_PAUSE
+        )
+
+
+# =========================
+# СОХРАНЕНИЕ GIF
+# =========================
+
+frames[0].save(
+    "typing.gif",
+    save_all=True,
+    append_images=frames[1:],
+    duration=durations,
+    loop=0,
+    disposal=2,
+    optimize=False
+)
+
+print("жыр: typing.gif")
