@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="700"
+     height="80"
+     viewBox="0 0 700 80">
+
+  <style>
+    .text {
+      font-family: monospace;
+      font-size: 24px;
+      fill: #ffffff;
+    }
+
+    .cursor {
+      fill: #ffffff;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <!-- Фраза 1 -->
+  <text x="20" y="48" class="text">
+    <tspan opacity="0">
+      мне нравится то, как ты пытаешься
+      <animate
+        attributeName="opacity"
+        from="0"
+        to="1"
+        dur="2.8s"
+        begin="0s"
+        fill="freeze"/>
+    </tspan>
+
+    <animate
+      attributeName="opacity"
+      values="1;1;0;0"
+      keyTimes="0;0.40;0.43;1"
+      dur="12s"
+      begin="0s"
+      repeatCount="indefinite"/>
+  </text>
+
+  <!-- Фраза 2 -->
+  <text x="20" y="48" class="text" opacity="0">
+    изгонять меня еще раз
+
+    <animate
+      attributeName="opacity"
+      values="0;0;1;1;0"
+      keyTimes="0;0.43;0.46;0.67;0.70"
+      dur="12s"
+      begin="0s"
+      repeatCount="indefinite"/>
+  </text>
+
+  <!-- Фраза 3 -->
+  <text x="20" y="48" class="text" opacity="0">
+    ну пожалуйста ;-)
+
+    <animate
+      attributeName="opacity"
+      values="0;0;1;1;0"
+      keyTimes="0;0.70;0.73;0.90;0.93"
+      dur="12s"
+      begin="0s"
+      repeatCount="indefinite"/>
+  </text>
+
+  <!-- Курсор -->
+  <rect x="20" y="23" width="2" height="30" class="cursor">
+    <animate
+      attributeName="x"
+      values="
+        20;
+        20;
+        410;
+        410;
+        20;
+        20;
+        270;
+        270;
+        20;
+        20;
+        190;
+        190;
+        20"
+      keyTimes="
+        0;
+        0.02;
+        0.40;
+        0.43;
+        0.46;
+        0.48;
+        0.67;
+        0.70;
+        0.73;
+        0.75;
+        0.90;
+        0.93;
+        1"
+      dur="12s"
+      repeatCount="indefinite"/>
+  </rect>
+
+</svg>
