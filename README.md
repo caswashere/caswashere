@@ -13,7 +13,7 @@
    be4 u interact, please read my strawpage. ♡゙ tysm 4 attentiøn !!   
   </text></font>
 <p align="center">
-  <img src="./fffuck.svg" alt="huh">
+  <img src="./sukanahuy.png" alt="huh">
 </p>
 <p align="center">
   <img src="./faku.svg" alt="huh">
