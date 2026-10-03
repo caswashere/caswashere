@@ -13,7 +13,7 @@
    be4 u interact, please read my <a href="https://holydeer.straw.page">strawpage</a>. ♡゙ tysm 4 attentiøn.  
   </text></font>
 <p align="center">
-  <img src="./dividers-056.png" alt="huh">
+  <img src="./sukanahuy.png" alt="huh">
 </p>
 <p align="center">
   <img src="./faku.svg" alt="huh">
