@@ -1,8 +1,9 @@
 <p align="center">
   <img src="./iwannakms.png" alt="huh">
 </p>
+
 <p align="center">
-  <img src="./f4ba31dcfbf891a2d99fa1fa8f0d0104.gif" alt="huh">
+  <img src="./5c4808d87db096cc1a08b0e10011f028.gif" alt="huh">
 </p>
 
 <p align="center">
@@ -20,10 +21,10 @@
 </p>
 
 <p align="center">
-  <img src="./5b181161ccf767b0c7f808cca0030963.gif" alt="huh">
+  <img src="./da1a55f1d16ba3aa40b56521b0c2e670.jpg" alt="huh">
 </p>
 
 <p align="center">
-  <font color="idk">me n my sammy <a href="https://github.com/melancholicme">melanie</a>
+  <font color="idk">me n my bestfren <a href="https://github.com/melancholicme">melanie</a>
 
 
