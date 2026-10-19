@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./cb3186033f200828456d013996a23046.gif" alt="huh">
+  <img src="./fuuuhhhhh.png" alt="huh">
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="./da1a55f1d16ba3aa40b56521b0c2e670.jpg" alt="huh">
+  <img src="./ahh.png" alt="huh">
 </p>
 
 <p align="center">
