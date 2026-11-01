@@ -8,49 +8,30 @@
       fill: #8B1A1A;
     }
 
-    .line1, .line2 {
-      clip-path: inset(0 100% 0 0);
-    }
-
     .line1 {
-      animation: first 16s steps(24) infinite;
+      clip-path: inset(0 100% 0 0);
+      animation: first 9s steps(24, end) infinite;
     }
 
     .line2 {
-      animation: second 16s steps(17) infinite;
+      clip-path: inset(0 100% 0 0);
+      animation: second 9s steps(17, end) infinite;
     }
 
     @keyframes first {
-      0% {
-        clip-path: inset(0 100% 0 0);
-      }
-      18.75% {
-        clip-path: inset(0 0 0 0);
-      }
-      37.5% {
-        clip-path: inset(0 0 0 0);
-      }
-      50% {
-        clip-path: inset(0 100% 0 0);
-      }
-      100% {
-        clip-path: inset(0 100% 0 0);
-      }
+      0%   { clip-path: inset(0 100% 0 0); }
+      22%  { clip-path: inset(0 0 0 0); }
+      38%  { clip-path: inset(0 0 0 0); }
+      50%  { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
     }
 
     @keyframes second {
-      0%, 50% {
-        clip-path: inset(0 100% 0 0);
-      }
-      68.75% {
-        clip-path: inset(0 0 0 0);
-      }
-      87.5% {
-        clip-path: inset(0 0 0 0);
-      }
-      100% {
-        clip-path: inset(0 100% 0 0);
-      }
+      0%, 50% { clip-path: inset(0 100% 0 0); }
+      65% { clip-path: inset(0 0 0 0); }
+      82% { clip-path: inset(0 0 0 0); }
+      94% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
     }
   </style>
 
